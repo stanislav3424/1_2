@@ -18,7 +18,7 @@ int main()
     setlocale(LC_ALL, "Russian");
     person n;
     double newSum;
-    
+
     n = inputData();
     newSum = inputNewSum();
     n = updatePerson(n, newSum);

@@ -8,10 +8,10 @@ struct person
     double sum;
 };
 
-person updatePerson(person localPerson, double newSum);
+void updatePerson(person &localPerson, double newSum);
 person inputData();
 double inputNewSum();
-void outpot(person localPerson);
+void output(const person &localPerson);
 
 int main()
 {
@@ -21,16 +21,15 @@ int main()
 
     n = inputData();
     newSum = inputNewSum();
-    n = updatePerson(n, newSum);
-    outpot(n);
+    updatePerson(n, newSum);
+    output(n);
 
     return 0;
 }
 
-person updatePerson(person localPerson, double newSum)
+void updatePerson(person &localPerson, double newSum)
 {
     localPerson.sum = newSum;
-    return localPerson;
 }
 
 person inputData()
@@ -48,12 +47,12 @@ person inputData()
 double inputNewSum()
 {
     double local{};
-    std::cout << "Введите номер счёта: ";
+    std::cout << "Введите новый баланс: ";
     std::cin >> local;
     return local;
 }
 
-void outpot(person localPerson)
+void output(const person &localPerson)
 {
     std::cout << "Ваш счёт: ";
     std::cout << localPerson.name;
